@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Praktický test</title>
+  <link rel="stylesheet" href="/style.css">
+  <script type="module" src="/app.js"></script>
+</head>
+<body>
+  <main class="search">
+    <h1>Vyhledávání na Googlu</h1>
+    <p class="search-intro">Zadejte dotaz a získejte organické výsledky vyhledávání.</p>
+
+    <form class="search-form" action="/api/search" method="get">
+      <label for="search-input">Co hledáte?</label>
+
+      <div class="search-row">
+        <div class="glowing-input">
+          <input
+            id="search-input"
+            name="q"
+            type="search"
+            placeholder="Například kavárny Praha"
+            maxlength="200"
+            required
+          >
+        </div>
+        <button id="search-button" type="submit">Vyhledat</button>
+      </div>
+    </form>
+
+    <p id="status" class="search-status" role="status" aria-live="polite" aria-atomic="true"></p>
+
+    <section id="results-section" class="results-section" aria-labelledby="results-heading" hidden>
+      <div class="results-header">
+        <h2 id="results-heading">Výsledky vyhledávání</h2>
+        <button id="download" class="download-button" type="button">Stáhnout JSON</button>
+      </div>
+      <p id="results-query" class="results-query"></p>
+      <ol id="results" class="results-list"></ol>
+      <p class="results-note">První stránka · Česko · čeština. Výsledky poskytuje Serper a mohou se lišit od vašeho osobního vyhledávání Google.</p>
+    </section>
+    <noscript><p>Formulář bez JavaScriptu otevře výsledky přímo jako JSON. Pro zobrazení seznamu a tlačítko stažení zapněte JavaScript.</p></noscript>
+  </main>
+</body>
+</html>
